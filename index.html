@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#1e3a8a" />
+  <meta name="description" content="PWA di preparazione alle prove Preselettiva, Scritta e Orale per il TFA Sostegno nella Scuola Secondaria di Secondo Grado." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="TFA II Grado" />
+  <title>TFA Sostegno II Grado — Preparazione Scritta, Orale e Test</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
+
+  <!-- Top Header -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-badge">Scuola Secondaria II Grado</span>
+          <h1 class="brand-title">TFA Sostegno Coach</h1>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="install-pwa-btn" class="btn btn-tonal hidden" type="button" aria-label="Installa l'applicazione sul dispositivo">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span>Installa App</span>
+        </button>
+
+        <button id="theme-toggle-btn" class="icon-btn" type="button" aria-label="Cambia tema chiaro o scuro" title="Cambia tema">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Primary Navigation -->
+    <nav class="main-nav" aria-label="Navigazione sezioni principali">
+      <button class="nav-tab active" data-view="dashboard" type="button" aria-current="page">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7" rx="1"/>
+          <rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="14" y="14" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/>
+        </svg>
+        <span>Dashboard</span>
+      </button>
+      <button class="nav-tab" data-view="lezioni" type="button">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+        </svg>
+        <span>Lezioni &amp; Tips</span>
+      </button>
+      <button class="nav-tab" data-view="preselettiva" type="button">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polyline points="9 11 12 14 22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+        <span>Test Anni Precedenti</span>
+      </button>
+      <button class="nav-tab" data-view="scritta" type="button">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 20h9"/>
+          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>
+        <span>Prova Scritta</span>
+      </button>
+      <button class="nav-tab" data-view="orale" type="button">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        <span>Prova Orale</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Main Workspace -->
+  <main id="main-content" class="app-main">
+    <!-- VIEW 1: DASHBOARD -->
+    <section id="view-dashboard" class="view-section active" aria-labelledby="dashboard-heading">
+      <div class="hero-card">
+        <div class="hero-content">
+          <span class="pill-tag">DM 30/09/2011 • D.Lgs. 66/2017 &amp; 96/2019 • DI 182/2020</span>
+          <h2 id="dashboard-heading">Preparazione Completa TFA Sostegno — Secondaria di II Grado</h2>
+          <p>Studia i moduli teorici mirati alle scuole superiori (Licei, Tecnici e Professionali), allenati sui quesiti ufficiali dei cicli precedenti, esercitati sulle tracce aperte della <strong>Prova Scritta</strong> e simula gli studi di caso della <strong>Prova Orale</strong>. Funziona anche 100% offline.</p>
+          <div class="hero-cta-group">
+            <button class="btn btn-primary" data-goto="lezioni" type="button">Inizia dalle Lezioni &amp; Tips</button>
+            <button class="btn btn-secondary" data-goto="preselettiva" type="button">Avvia Simulazione Test</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress KPI Grid -->
+      <div class="stats-grid" aria-label="Riepilogo dei tuoi progressi">
+        <article class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Lezioni Completate</span>
+            <span class="stat-badge" id="stat-lessons-pct">0%</span>
+          </div>
+          <p class="stat-value" id="stat-lessons-count">0 / 8</p>
+          <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="prog-lessons">
+            <div class="progress-fill" id="prog-lessons-fill" style="width: 0%"></div>
+          </div>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Accuratezza Test Preselettivi</span>
+            <span class="stat-badge" id="stat-quiz-badge">Banca Dati</span>
+          </div>
+          <p class="stat-value" id="stat-quiz-score">0%</p>
+          <p class="stat-subtext" id="stat-quiz-detail">0 risposte corrette su 0 tentate</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Tracce Scritte Esercitate</span>
+            <span class="stat-badge">30/30 Target</span>
+          </div>
+          <p class="stat-value" id="stat-written-count">0 / 4</p>
+          <p class="stat-subtext">Con autovalutazione dei concetti chiave</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Casi Orali Padroneggiati</span>
+            <span class="stat-badge">Colloquio</span>
+          </div>
+          <p class="stat-value" id="stat-oral-count">0 / 3</p>
+          <p class="stat-subtext">Studi di caso specifici per il II Grado</p>
+        </article>
+      </div>
+
+      <!-- Quick Roadmap for Secondaria II Grado -->
+      <div class="section-block">
+        <div class="section-header-row">
+          <div>
+            <h3>I 5 Pilastri dell'Esame per il Secondo Grado</h3>
+            <p class="muted">Clicca su un ambito per aprire direttamente le lezioni e i consigli strategici per scritto e orale.</p>
+          </div>
+        </div>
+        <div id="dashboard-topics-grid" class="topics-grid"></div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: LEZIONI & TIPS PER ARGOMENTO -->
+    <section id="view-lezioni" class="view-section" aria-labelledby="lezioni-heading" hidden>
+      <div class="section-header-row">
+        <div>
+          <h2 id="lezioni-heading">Lezioni e Tips Strategici per Argomento</h2>
+          <p class="muted">Seleziona un ambito del programma d'esame (Allegato C DM 30/09/2011) o filtra per parola chiave.</p>
+        </div>
+        <div class="search-controls">
+          <input type="search" id="lesson-search-input" class="input-field" placeholder="Cerca autore, legge o concetto (es. GLO, Vygotskij, UDL)..." aria-label="Cerca nelle lezioni" />
+        </div>
+      </div>
+
+      <div id="topic-filter-chips" class="chip-group" role="tablist" aria-label="Filtra lezioni per argomento"></div>
+      <div id="lessons-container" class="lessons-list"></div>
+    </section>
+
+    <!-- VIEW 3: SIMULATORE TEST ANNI PRECEDENTI -->
+    <section id="view-preselettiva" class="view-section" aria-labelledby="quiz-heading" hidden>
+      <div class="section-header-row">
+        <div>
+          <h2 id="quiz-heading">Simulatore Test Basato su Prove di Anni Precedenti</h2>
+          <p class="muted">Quesiti ufficiali estratti dalle prove selettive dei cicli TFA precedenti (VI, VII, VIII e IX Ciclo) per la Secondaria di II Grado, con spiegazione commentata.</p>
+        </div>
+      </div>
+
+      <!-- Quiz Configuration Bar -->
+      <div class="card quiz-setup-card" id="quiz-setup-panel">
+        <div class="quiz-setup-grid">
+          <div class="form-group">
+            <label for="quiz-topic-select">Ambito tematico</label>
+            <select id="quiz-topic-select" class="input-field">
+              <option value="all">Tutti gli argomenti d'esame (Simulazione Mista)</option>
+              <option value="normativa">Ambito 1 — Normativa Scolastica, PEI e Inclusione</option>
+              <option value="psicopedagogia">Ambito 2 — Psicologia dello Sviluppo e dell'Adolescenza</option>
+              <option value="empatia">Ambito 3 — Empatia, Intelligenza Emotiva e Creatività</option>
+              <option value="metodologie">Ambito 4 — Metodologie Didattiche, UDL e TIC</option>
+              <option value="autonomia">Ambito 5 — Autonomia Scolastica, PTOF e Ordinamenti II Grado</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="quiz-mode-select">Modalità di svolgimento</label>
+            <select id="quiz-mode-select" class="input-field">
+              <option value="training">Allenamento guidato (Correzione e spiegazione immediata)</option>
+              <option value="exam">Simulazione Esame Ufficiale (Timer attivo + punteggio MIUR: +0,5 / 0)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="quiz-count-select">Numero di quesiti</label>
+            <select id="quiz-count-select" class="input-field">
+              <option value="10">10 quesiti</option>
+              <option value="20" selected>Tutti i 20 quesiti selezionati</option>
+              <option value="5">Sessione rapida (5 quesiti)</option>
+            </select>
+          </div>
+        </div>
+        <div class="quiz-setup-actions">
+          <button id="start-quiz-btn" class="btn btn-primary" type="button">Avvia Test Ora</button>
+          <button id="reset-quiz-stats-btn" class="btn btn-ghost" type="button">Azzera Statistiche Test</button>
+        </div>
+      </div>
+
+      <!-- Active Quiz Arena -->
+      <div id="quiz-arena" class="card quiz-arena" hidden>
+        <div class="quiz-topbar">
+          <div class="quiz-meta">
+            <span class="pill-tag" id="quiz-question-counter">Domanda 1 / 10</span>
+            <span class="pill-tag pill-outline" id="quiz-cycle-badge">VIII Ciclo</span>
+          </div>
+          <div class="quiz-timer" id="quiz-timer-display" aria-live="polite">⏱ 00:00</div>
+        </div>
+
+        <h3 id="quiz-question-text" class="quiz-question-title"></h3>
+        <div id="quiz-options-list" class="quiz-options" role="radiogroup" aria-labelledby="quiz-question-text"></div>
+
+        <div id="quiz-feedback-box" class="quiz-feedback" hidden></div>
+
+        <div class="quiz-footer">
+          <button id="quiz-quit-btn" class="btn btn-ghost" type="button">Termina sessione</button>
+          <button id="quiz-next-btn" class="btn btn-primary" type="button" disabled> Domanda Successiva →</button>
+        </div>
+      </div>
+
+      <!-- Quiz Summary Report -->
+      <div id="quiz-results-panel" class="card quiz-results" hidden></div>
+    </section>
+
+    <!-- VIEW 4: LABORATORIO PROVA SCRITTA -->
+    <section id="view-scritta" class="view-section" aria-labelledby="scritta-heading" hidden>
+      <div class="section-header-row">
+        <div>
+          <h2 id="scritta-heading">Simulatore Prova Scritta (Tracce Ufficiali Anni Precedenti)</h2>
+          <p class="muted">Esercitati a redigere un elaborato sintetico (15-25 righe) sulle tracce realmente assegnate agli esami per il II grado. Il sistema analizza in tempo reale i riferimenti normativi e gli autori chiave inclusi nel tuo testo e ti permette di confrontarlo con uno svolgimento da 30/30.</p>
+        </div>
+      </div>
+
+      <div id="written-traces-selector" class="chip-group" role="tablist" aria-label="Seleziona traccia prova scritta"></div>
+
+      <div id="written-workspace" class="written-workspace"></div>
+    </section>
+
+    <!-- VIEW 5: SIMULATORE PROVA ORALE -->
+    <section id="view-orale" class="view-section" aria-labelledby="orale-heading" hidden>
+      <div class="section-header-row">
+        <div>
+          <h2 id="orale-heading">Simulatore Prova Orale &amp; Studi di Caso</h2>
+          <p class="muted">Preparati ai casi didattici complessi del colloquio orale per il secondo grado (rifiuto dell'insegnante di sostegno, conflitto sul PEI differenziato, progettazione del PCTO inclusivo) con timer di esposizione (5 minuti) e checklist dei punti che la commissione si aspetta di sentire.</p>
+        </div>
+      </div>
+
+      <div id="oral-cases-container" class="oral-cases-grid"></div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p><strong>TFA Sostegno Coach — Secondaria di II Grado</strong> • App PWA Offline-First con salvataggio automatico dei progressi sul dispositivo.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
