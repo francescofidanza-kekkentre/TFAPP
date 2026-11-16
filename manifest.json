@@ -1,6 +1,6 @@
 {
-  "name": "TFA Sostegno II Grado — Preparazione Scritta, Orale e Preselettiva",
-  "short_name": "TFA II Grado",
+  "name": "TFAPP-SSSG — Preparazione TFA Sostegno II Grado",
+  "short_name": "TFAPP-SSSG",
   "description": "App PWA completa per la preparazione alle prove (Preselettiva, Scritta e Orale) del TFA Sostegno per la Scuola Secondaria di Secondo Grado, con lezioni, tips e simulatore basato sui bandi ufficiali degli anni precedenti.",
   "start_url": "./index.html",
   "scope": "./",
