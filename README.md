@@ -1,4 +1,4 @@
-# TFAPP — TFA Sostegno Scuola Secondaria di II Grado (PWA)
+# TFAPP-SSSG — TFA Sostegno Scuola Secondaria di II Grado (PWA)
 
 Applicazione **Progressive Web App (PWA)** offline-first per la preparazione alle prove di ammissione (**Preselettiva, Prova Scritta e Prova Orale**) al corso di specializzazione **TFA Sostegno per la Scuola Secondaria di Secondo Grado**.
 
