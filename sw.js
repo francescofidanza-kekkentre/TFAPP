@@ -1,10 +1,12 @@
-const CACHE_NAME = 'tfapp-sssg-pwa-v2';
+const CACHE_NAME = 'tfapp-sssg-pwa-v3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './styles.css',
+  './evaluator.css',
   './data.js',
   './app.js',
+  './evaluator.js',
   './manifest.json',
   './icons/icon-192.png',
   './icons/icon-512.png',
