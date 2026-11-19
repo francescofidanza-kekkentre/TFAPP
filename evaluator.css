@@ -1,0 +1,243 @@
+/* Sistema di Valutazione Simulazioni d'Esame — TFAPP-SSSG */
+
+.eval-panel {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 14px;
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+}
+
+[data-theme="dark"] .eval-panel,
+[data-theme="dark"] .eval-dashboard-summary {
+  background: var(--bg-surface, #1e293b);
+  border-color: var(--border-color, #334155);
+  color: var(--text-primary, #f1f5f9);
+}
+
+.eval-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+[data-theme="dark"] .eval-header {
+  border-bottom-color: #334155;
+}
+
+.eval-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.eval-score-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.eval-score-badge.pass {
+  background: rgba(16, 185, 129, 0.15);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.eval-score-badge.fail {
+  background: rgba(239, 68, 68, 0.14);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+[data-theme="dark"] .eval-score-badge.pass {
+  color: #34d399;
+}
+
+[data-theme="dark"] .eval-score-badge.fail {
+  color: #f87171;
+}
+
+.eval-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.eval-metric-box {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: var(--bg-page, #f8fafc);
+  border: 1px solid var(--border-color, #e2e8f0);
+}
+
+[data-theme="dark"] .eval-metric-box {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+.eval-metric-label {
+  display: block;
+  font-size: 0.78rem;
+  opacity: 0.75;
+  margin-bottom: 0.25rem;
+}
+
+.eval-metric-val {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.eval-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.eval-tag {
+  font-size: 0.78rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color, #cbd5e1);
+  background: var(--bg-page, #f8fafc);
+  opacity: 0.65;
+}
+
+.eval-tag.found {
+  opacity: 1;
+  background: rgba(37, 99, 235, 0.12);
+  border-color: rgba(37, 99, 235, 0.4);
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .eval-tag {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .eval-tag.found {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.eval-rubric-grid {
+  display: grid;
+  gap: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.eval-criterion {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.4rem 1rem;
+  align-items: center;
+}
+
+.eval-criterion label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.eval-criterion input[type="range"] {
+  grid-column: 1 / -1;
+  width: 100%;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.eval-criterion-pts {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #2563eb;
+}
+
+[data-theme="dark"] .eval-criterion-pts {
+  color: #60a5fa;
+}
+
+.eval-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.eval-feedback-banner {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  background: rgba(37, 99, 235, 0.08);
+  border-left: 4px solid #2563eb;
+}
+
+[data-theme="dark"] .eval-feedback-banner {
+  background: rgba(59, 130, 246, 0.14);
+}
+
+.eval-dashboard-summary {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 14px;
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+}
+
+.eval-history-list {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.eval-history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 8px;
+  background: var(--bg-page, #f8fafc);
+  border: 1px solid var(--border-color, #e2e8f0);
+  font-size: 0.88rem;
+}
+
+[data-theme="dark"] .eval-history-item {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+.eval-inline-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.eval-inline-inputs .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.eval-inline-inputs label {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
