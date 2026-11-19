@@ -13,6 +13,7 @@
   <link rel="icon" type="image/svg+xml" href="icons/icon.svg" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="evaluator.css" />
 </head>
 <body>
   <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
@@ -150,6 +151,9 @@
         </article>
       </div>
 
+      <!-- Registro Valutazioni Simulazioni -->
+      <div id="eval-dashboard-summary" class="eval-dashboard-summary"></div>
+
       <!-- Quick Roadmap for Secondaria II Grado -->
       <div class="section-block">
         <div class="section-header-row">
@@ -248,6 +252,7 @@
 
       <!-- Quiz Summary Report -->
       <div id="quiz-results-panel" class="card quiz-results" hidden></div>
+      <div id="eval-quiz-panel" class="eval-panel card"></div>
     </section>
 
     <!-- VIEW 4: LABORATORIO PROVA SCRITTA -->
@@ -262,6 +267,7 @@
       <div id="written-traces-selector" class="chip-group" role="tablist" aria-label="Seleziona traccia prova scritta"></div>
 
       <div id="written-workspace" class="written-workspace"></div>
+      <div id="eval-written-panel" class="eval-panel card"></div>
     </section>
 
     <!-- VIEW 5: SIMULATORE PROVA ORALE -->
@@ -274,6 +280,7 @@
       </div>
 
       <div id="oral-cases-container" class="oral-cases-grid"></div>
+      <div id="eval-oral-panel" class="eval-panel card"></div>
     </section>
   </main>
 
@@ -283,5 +290,6 @@
 
   <script src="data.js"></script>
   <script src="app.js"></script>
+  <script src="evaluator.js"></script>
 </body>
 </html>
